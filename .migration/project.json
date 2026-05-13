@@ -1,10 +1,10 @@
 {
-  "previewOrg": "nishant-adobe",
-  "previewSite": "abbvie-rinvoqhcp-eds",
   "type": "xwalk",
   "contentHostUrl": "author-p160552-e1944799.adobeaemcloud.com",
   "aemSitePath": "/content/multirepo-rinvoqhcp",
   "aemAssetsFolderPath": "/content/dam/multirepo-rinvoqhcp",
   "aemSiteName": "multirepo-rinvoqhcp",
-  "aemSiteTitle": "Rinvoqhcp"
+  "aemSiteTitle": "Rinvoqhcp",
+  "previewOrg": "nishant-adobe",
+  "previewSite": "abbvie-rinvoqhcp-eds"
 }
