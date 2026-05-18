@@ -1,27 +1,117 @@
 .cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+    gap: var(--spacing-m);
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+    margin: var(--spacing-s);
 }
 
 .cards .cards-card-image {
-  line-height: 0;
+    line-height: 0;
 }
 
 .cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* access-selector variant — 3-up disease area cards */
+.cards.access-selector > ul {
+    grid-template-columns: 1fr;
+}
+
+.cards.access-selector > ul > li {
+    border: none;
+    border-radius: var(--border-radius-m);
+    box-shadow: var(--shadow-default);
+    padding: var(--spacing-l) var(--spacing-m);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+}
+
+.cards.access-selector > ul > li:hover,
+.cards.access-selector > ul > li:focus-within {
+    box-shadow: 0 4px 19px 0 rgb(0 0 0 / 14%);
+}
+
+.cards.access-selector .cards-card-body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cards.access-selector .cards-card-body p {
+    margin: 0;
+}
+
+.cards.access-selector .cards-card-body p strong {
+    font-size: var(--body-font-size-s);
+    font-weight: var(--weight-semibold);
+    color: var(--heading-color);
+}
+
+.cards.access-selector .cards-card-body h3 {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size-l);
+    font-weight: var(--weight-bold);
+    color: var(--heading-color);
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-m);
+    flex: 1;
+}
+
+.cards.access-selector .cards-card-body .button-container {
+    margin-top: auto;
+}
+
+.cards.access-selector .cards-card-body a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background-color: var(--color-gold);
+    color: var(--color-charcoal);
+    font-weight: var(--weight-bold);
+    font-size: var(--body-font-size-m);
+    text-decoration: none;
+    border-radius: var(--border-radius-pill);
+    padding: var(--spacing-s) var(--spacing-l);
+    transition: background-color 0.2s ease;
+}
+
+.cards.access-selector .cards-card-body a::after {
+    content: '\2192';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background-color: var(--color-charcoal);
+    color: var(--color-gold);
+    font-size: 0.85em;
+}
+
+.cards.access-selector .cards-card-body a:hover {
+    background-color: var(--color-lemon);
+    color: var(--color-charcoal);
+    text-decoration: none;
+}
+
+@media (width >= 900px) {
+    .cards.access-selector > ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
