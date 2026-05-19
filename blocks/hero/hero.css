@@ -1,37 +1,107 @@
 .hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
+    max-width: unset;
+    padding: 0;
 }
 
 .hero {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+    position: relative;
+    padding: 40px 24px;
+    min-height: 300px;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--background-color);
 }
 
 .hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    object-fit: cover;
+    box-sizing: border-box;
 }
 
 .hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Access page hero variant */
+.hero.hero-access {
+    background-color: rgb(237 237 237);
+    background-image: url('/content/dam/rinvoqhcpivy/images/brushstrokes/hero-brush-bg.svg');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    min-height: 340px;
+    padding: 64px 20px 0;
+}
+
+.hero.hero-access h1 {
+    color: var(--heading-color);
+    font-size: 40px;
+    font-weight: var(--weight-bold);
+    line-height: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero.hero-access .hero-line-1 {
+    display: block;
+    font-size: 40px;
+    font-weight: var(--weight-black);
+    line-height: 1;
+    color: var(--heading-color);
+    margin-bottom: 0;
+}
+
+.hero.hero-access .hero-commitment {
+    display: block;
+    font-family: 'Upa Handwriting', var(--accent-font-family), serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: rgb(255 209 0);
+    line-height: 80px;
+    margin: -4px 0 0;
+}
+
+.hero.hero-access .hero-line-3 {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: var(--weight-black);
+    line-height: 36px;
+    color: var(--heading-color);
+    padding-bottom: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='18' fill='none'%3E%3Cpath d='M0 9c30-4 60 2 90-2s60 4 90 0 60-3 90 1 60 5 90 1 60-3 40 0' stroke='%23ffd100' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+    background-size: 100% 14px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
 }
 
 @media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
+    .hero {
+        padding: 40px 32px;
+    }
+}
+
+@media (width < 900px) {
+    .hero.hero-access .hero-commitment {
+        font-size: 60px;
+        line-height: 56px;
+    }
+
+    .hero.hero-access .hero-line-1,
+    .hero.hero-access .hero-line-3 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .hero.hero-access {
+        min-height: 240px;
+        padding: 40px 16px 0;
+    }
 }
