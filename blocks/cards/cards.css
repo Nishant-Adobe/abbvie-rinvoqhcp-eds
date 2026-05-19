@@ -3,17 +3,79 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-    gap: var(--spacing-m);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
 }
 
 .cards > ul > li {
-    border: 1px solid var(--border-color);
-    background-color: var(--background-color);
+    border: 1px solid rgb(209 211 212);
+    border-radius: 12px;
+    background-color: var(--color-white);
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cards .cards-card-body {
-    margin: var(--spacing-s);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    width: 100%;
+}
+
+.cards .cards-card-body p {
+    margin: 0;
+    font-size: var(--body-font-size-m);
+    color: var(--text-color);
+}
+
+.cards .cards-card-body p strong {
+    font-size: 14px;
+    font-weight: var(--weight-semibold);
+    color: var(--text-color);
+}
+
+.cards .cards-card-body h3 {
+    font-size: 22px;
+    font-weight: var(--weight-black);
+    color: var(--heading-color);
+    margin: 4px 0 16px;
+    text-transform: uppercase;
+}
+
+.cards .cards-card-body a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-plum);
+    color: var(--color-white);
+    border-radius: 100px;
+    padding: 14px 48px 14px 28px;
+    font-size: var(--body-font-size-m);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.cards .cards-card-body a::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Ccircle cx='10' cy='10' r='9' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M8 6l4 4-4 4' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cards .cards-card-body a:hover {
+    background-color: rgb(115 14 60);
 }
 
 .cards .cards-card-image {
@@ -26,92 +88,8 @@
     object-fit: cover;
 }
 
-/* access-selector variant — 3-up disease area cards */
-.cards.access-selector > ul {
-    grid-template-columns: 1fr;
-}
-
-.cards.access-selector > ul > li {
-    border: none;
-    border-radius: var(--border-radius-m);
-    box-shadow: var(--shadow-default);
-    padding: var(--spacing-l) var(--spacing-m);
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.2s ease;
-}
-
-.cards.access-selector > ul > li:hover,
-.cards.access-selector > ul > li:focus-within {
-    box-shadow: 0 4px 19px 0 rgb(0 0 0 / 14%);
-}
-
-.cards.access-selector .cards-card-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.cards.access-selector .cards-card-body p {
-    margin: 0;
-}
-
-.cards.access-selector .cards-card-body p strong {
-    font-size: var(--body-font-size-s);
-    font-weight: var(--weight-semibold);
-    color: var(--heading-color);
-}
-
-.cards.access-selector .cards-card-body h3 {
-    font-family: var(--heading-font-family);
-    font-size: var(--heading-font-size-l);
-    font-weight: var(--weight-bold);
-    color: var(--heading-color);
-    margin-top: var(--spacing-xs);
-    margin-bottom: var(--spacing-m);
-    flex: 1;
-}
-
-.cards.access-selector .cards-card-body .button-container {
-    margin-top: auto;
-}
-
-.cards.access-selector .cards-card-body a {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    background-color: var(--color-gold);
-    color: var(--color-charcoal);
-    font-weight: var(--weight-bold);
-    font-size: var(--body-font-size-m);
-    text-decoration: none;
-    border-radius: var(--border-radius-pill);
-    padding: var(--spacing-s) var(--spacing-l);
-    transition: background-color 0.2s ease;
-}
-
-.cards.access-selector .cards-card-body a::after {
-    content: '\2192';
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
-    background-color: var(--color-charcoal);
-    color: var(--color-gold);
-    font-size: 0.85em;
-}
-
-.cards.access-selector .cards-card-body a:hover {
-    background-color: var(--color-lemon);
-    color: var(--color-charcoal);
-    text-decoration: none;
-}
-
 @media (width >= 900px) {
-    .cards.access-selector > ul {
+    .cards > ul {
         grid-template-columns: repeat(3, 1fr);
     }
 }
