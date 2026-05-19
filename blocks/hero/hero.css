@@ -5,58 +5,23 @@
 
 .hero {
     position: relative;
-    padding: var(--spacing-xl) var(--content-padding);
-    min-height: 300px;
+    padding: var(--spacing-xl) var(--content-padding) var(--spacing-xxl);
+    min-height: 200px;
+    background-color: var(--light-color);
 }
 
 .hero h1 {
     position: relative;
+    z-index: 1;
     max-width: var(--content-max-width);
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text-color-inverse);
-}
-
-.hero picture {
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    object-fit: cover;
-    box-sizing: border-box;
-}
-
-.hero img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-@media (width >= 900px) {
-    .hero {
-        padding: var(--spacing-xxl) var(--content-padding) var(--spacing-xl);
-    }
-}
-
-/* access-hero variant — light bg with brushstroke texture */
-.hero.access-hero {
-    background-color: var(--light-color);
-    background-image: url('/content/dam/rinvoqhcpivy/hero-bg.png');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 100%;
-    padding: var(--spacing-xl) var(--content-padding) var(--spacing-xxl);
-}
-
-.hero.access-hero h1 {
+    margin: 0 auto;
     color: var(--heading-color);
     font-family: var(--heading-font-family-bold);
     font-size: var(--heading-font-size-xxl);
     line-height: 1;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
-.hero.access-hero h1 em {
+.hero h1 em {
     display: block;
     font-family: var(--accent-font-family);
     font-style: italic;
@@ -67,26 +32,29 @@
     margin: var(--spacing-xxs) 0;
 }
 
-.hero.access-hero h1 span {
+.hero h1 span {
     display: inline-block;
     color: var(--heading-color);
     font-family: var(--heading-font-family-bold);
     font-weight: var(--weight-bold);
     font-size: var(--heading-font-size-xl);
     line-height: var(--line-height-heading);
-    position: relative;
-    padding-bottom: var(--spacing-xs);
 }
 
-.hero.access-hero h1 span::after {
-    content: '';
+.hero picture {
     position: absolute;
-    bottom: 0;
-    left: -2%;
-    width: 104%;
-    height: 45%;
-    background-image: url('/content/dam/rinvoqhcpivy/stroke-underline.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 0;
+    inset: 0;
+}
+
+.hero img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media (width >= 900px) {
+    .hero {
+        padding: var(--spacing-xxl) var(--content-padding) var(--spacing-xxl);
+    }
 }
