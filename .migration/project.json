@@ -6,5 +6,6 @@
   "aemSiteName": "multirepo-rinvoqhcp",
   "aemSiteTitle": "Rinvoqhcp",
   "previewOrg": "nishant-adobe",
-  "previewSite": "abbvie-rinvoqhcp-eds"
+  "previewSite": "abbvie-rinvoqhcp-eds",
+  "baseUrl": "https://www.rinvoqhcp.com"
 }

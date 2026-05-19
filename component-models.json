@@ -180,6 +180,43 @@
     ]
   },
   {
+    "id": "form",
+    "fields": []
+  },
+  {
+    "id": "form-field",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "type",
+        "label": "Field Type",
+        "value": "text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Field Name",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "options",
+        "label": "Options (comma-separated)",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
