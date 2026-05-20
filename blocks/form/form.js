@@ -1,9 +1,27 @@
 function createField(row) {
-  const [typeCell, nameCell, labelCell, optionsCell] = [...row.children];
-  const type = typeCell?.textContent?.trim().toLowerCase() || 'text';
-  const name = nameCell?.textContent?.trim() || '';
-  const label = labelCell?.textContent?.trim() || '';
-  const options = optionsCell?.textContent?.trim() || '';
+  const cells = [...row.children];
+  let type;
+  let name;
+  let label;
+  let options;
+
+  if (cells.length >= 4) {
+    type = cells[0]?.textContent?.trim().toLowerCase() || 'text';
+    name = cells[1]?.textContent?.trim() || '';
+    label = cells[2]?.textContent?.trim() || '';
+    options = cells[3]?.textContent?.trim() || '';
+  } else if (cells.length === 3) {
+    type = cells[0]?.textContent?.trim().toLowerCase() || 'text';
+    label = cells[1]?.textContent?.trim() || '';
+    name = label.replace(/[^a-zA-Z0-9]/g, '').substring(0, 30) || 'field';
+    options = cells[2]?.textContent?.trim() || '';
+  } else {
+    type = cells[0]?.textContent?.trim().toLowerCase() || 'text';
+    label = cells[1]?.textContent?.trim() || '';
+    name = label.replace(/[^a-zA-Z0-9]/g, '').substring(0, 30) || 'field';
+    options = '';
+  }
+
   const required = label.endsWith('*');
   const cleanLabel = required ? label.slice(0, -1).trim() : label;
 

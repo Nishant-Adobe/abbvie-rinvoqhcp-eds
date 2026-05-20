@@ -77,6 +77,15 @@ function buildAutoBlocks() {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  // Fix escaped HTML in headings (AEM escapes inline tags like <em>)
+  main.querySelectorAll('h1, h2, h3').forEach((heading) => {
+    if (heading.innerHTML.includes('&lt;em&gt;') || heading.innerHTML.includes('&#x3C;em>')) {
+      heading.innerHTML = heading.innerHTML
+        .replace(/&lt;em&gt;|&#x3C;em>/g, '<em>')
+        .replace(/&lt;\/em&gt;|&#x3C;\/em>/g, '</em>');
+    }
+  });
+
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
