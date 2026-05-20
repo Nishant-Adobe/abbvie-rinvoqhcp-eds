@@ -143,6 +143,70 @@ main > .section:not(.hero-container, .cards-container) > .default-content-wrappe
     margin: 24px 0 32px;
 }
 
+/* ===== CONTACT A REP PAGE ===== */
+
+/* Contact a Rep — hero section with gray textured background */
+main > .section:first-child:has(h1 em) { /* stylelint-disable-line no-descending-specificity */
+    background-color: rgb(237 237 237);
+    background-image: url('/content/dam/rinvoqhcpivy/images/brushstrokes/hero-brush-bg.svg');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding: 64px 20px 40px;
+}
+
+/* Contact a Rep — h1 styling */
+main > .section:first-child h1:has(em) {
+    font-size: 40px;
+    font-weight: var(--weight-black);
+    color: var(--heading-color);
+    line-height: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact a Rep — "REP" in yellow handwriting */
+main > .section:first-child h1 em {
+    display: block;
+    font-style: normal;
+    font-family: 'Upa Handwriting', var(--accent-font-family), serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: rgb(255 209 0);
+    line-height: 80px;
+    margin-top: -4px;
+}
+
+/* Contact a Rep — gray background for form and ISI sections */
+main:has(h1 em) > .section.form-container {
+    background-color: rgb(245 245 245);
+    padding: 40px 20px;
+}
+
+/* Contact a Rep — form card with envelope and label inline */
+main:has(h1 em) .form .form-field-select:first-child label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-m);
+    font-size: 32px;
+    font-weight: var(--weight-medium);
+    line-height: 40px;
+    text-align: left;
+    padding-top: 0;
+    background-image: none;
+    margin-bottom: var(--spacing-s);
+}
+
+main:has(h1 em) .form .form-field-select:first-child label::before {
+    content: '';
+    width: 80px;
+    height: 56px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='56' fill='none'%3E%3Crect x='2' y='2' width='76' height='52' rx='3' stroke='%2325282a' stroke-width='4'/%3E%3Cpath d='M2 8l38 26L78 8' stroke='%2390124a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 /* ===== ACCESS PAGE SPECIFIC ===== */
 
 /* Access page — gray page background */
