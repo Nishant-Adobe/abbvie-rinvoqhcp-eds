@@ -4,7 +4,7 @@
  */
 import cleanup from './transformers/cleanup.js';
 import sections from './transformers/sections.js';
-import heroHomepage from './parsers/hero-homepage.js';
+import { matches as heroHomepage } from './parsers/hero-homepage.js';
 import columnsIndication from './parsers/columns-indication.js';
 import cardsSupport from './parsers/cards-support.js';
 
