@@ -5,8 +5,8 @@
 import cleanup from './transformers/cleanup.js';
 import sections from './transformers/sections.js';
 import { matches as heroHomepage } from './parsers/hero-homepage.js';
-import columnsIndication from './parsers/columns-indication.js';
-import cardsSupport from './parsers/cards-support.js';
+import { matches as columnsIndication } from './parsers/columns-indication.js';
+import { matches as cardsSupport } from './parsers/cards-support.js';
 
 export default {
   transformers: [cleanup, sections],
