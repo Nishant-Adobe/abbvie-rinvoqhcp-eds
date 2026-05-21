@@ -227,3 +227,58 @@ main:has(.hero-access) .section h2 + p {
     color: var(--text-color);
     margin-bottom: 32px;
 }
+
+/* ===== HOMEPAGE — Patient Support Section (Yellow Background) ===== */
+
+/* Full section yellow background */
+main > .section:has(.cards-support) { /* stylelint-disable-line no-descending-specificity */
+    background-color: rgb(255 209 0);
+    padding: 48px 20px 40px;
+    position: relative;
+}
+
+/* White brush texture at bottom of yellow section */
+main > .section:has(.cards-support)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='60' fill='none'%3E%3Cpath d='M900 10c60-5 120 8 180 3s120-10 180-3c30 3 60 5 80 2 20-3 60-6 100-2' stroke='%23fff' stroke-width='40' stroke-linecap='round' fill='none' opacity='0.7'/%3E%3Cpath d='M1000 35c40-4 80 6 120 2s80-8 120-2c20 2 40 4 60 1' stroke='%23fff' stroke-width='30' stroke-linecap='round' fill='none' opacity='0.5'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Patient Support section heading — centered with black brush underline */
+main > .section:has(.cards-support) h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: var(--weight-bold);
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='10' fill='none'%3E%3Cpath d='M0 5c30-3 60 2 90-1s60 3 90 0 60-2 90 1 60 3 40 0' stroke='%2325282a' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+    background-size: 300px 8px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+/* Patient Support section footnote */
+main > .section:has(.cards-support) > .default-content-wrapper > p:last-child {
+    font-size: 13px;
+    color: var(--heading-color);
+    text-align: left;
+    margin-top: 32px;
+    opacity: 0.8;
+}
+
+/* ===== HOMEPAGE — ISI Section Gray Background ===== */
+
+/* ISI section uses light gray background (not black) */
+main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety,
+main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety ~ * {
+    color: var(--text-color);
+}

@@ -1,0 +1,186 @@
+.hero-homepage-container .hero-homepage-wrapper {
+    max-width: unset;
+    padding: 0;
+}
+
+.hero-homepage {
+    position: relative;
+    background-color: rgb(237 237 237);
+    overflow: hidden;
+}
+
+/* Background brush texture via ::before — uses authored image or fallback */
+.hero-homepage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-bg-image, url('/content/dam/rinvoqhcpivy/images/brushstrokes/hero-brush-bg.svg'));
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-homepage > div {
+    position: relative;
+    z-index: 1;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 64px 20px 0;
+    min-height: 340px;
+}
+
+/* Hide image row — kept in DOM for xwalk model mapping */
+.hero-homepage .hero-homepage-img-row {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Gold/yellow top accent bar */
+.hero-homepage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-color: rgb(255 209 0);
+    z-index: 2;
+}
+
+.hero-homepage h1 {
+    font-size: 40px;
+    font-family: var(--heading-font-family-bold);
+    font-weight: var(--weight-black);
+    line-height: 36px;
+    color: var(--heading-color);
+    margin: 0;
+    max-width: 600px;
+}
+
+.hero-homepage .hero-homepage-line-1 {
+    display: block;
+    font-size: 40px;
+    font-weight: var(--weight-black);
+    line-height: 1;
+    color: var(--heading-color);
+}
+
+.hero-homepage .hero-homepage-challenge {
+    display: block;
+    font-family: 'Upa Handwriting', var(--accent-font-family), serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: rgb(255 209 0);
+    line-height: 80px;
+    margin: -4px 0 0;
+}
+
+.hero-homepage .hero-homepage-line-3 {
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    font-weight: var(--weight-black);
+    line-height: 36px;
+    color: var(--heading-color);
+    padding-bottom: 20px;
+}
+
+/* Yellow brushstroke underline under TREATMENT GOALS — DAM SVG asset */
+.hero-homepage .hero-homepage-line-3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background-image: url('/content/dam/rinvoqhcpivy/images/brushstrokes/stroke--page-hero-tall.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* Hero content area — flex layout for heading + badge */
+.hero-homepage .hero-homepage-text-row > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Badge image in hero (right-side positioned) */
+.hero-homepage .hero-homepage-badge {
+    flex-shrink: 0;
+    width: 320px;
+    height: 320px;
+    align-self: center;
+    margin-right: 40px;
+}
+
+.hero-homepage .hero-homepage-badge img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgb(0 0 0 / 10%));
+}
+
+/* Responsive: Tablet */
+@media (width < 1200px) {
+    .hero-homepage > div {
+        min-height: 280px;
+    }
+
+    .hero-homepage .hero-homepage-challenge {
+        font-size: 80px;
+        line-height: 64px;
+    }
+
+    .hero-homepage .hero-homepage-badge {
+        width: 240px;
+        height: 240px;
+        margin-right: 20px;
+    }
+}
+
+/* Responsive: Mobile */
+@media (width < 900px) {
+    .hero-homepage > div {
+        padding: 24px 20px 0;
+        min-height: 160px;
+    }
+
+    .hero-homepage .hero-homepage-text-row > div {
+        flex-direction: column;
+    }
+
+    .hero-homepage h1 {
+        font-size: 26px;
+        line-height: 27.5px;
+        max-width: 100%;
+    }
+
+    .hero-homepage .hero-homepage-line-1 {
+        font-size: 26px;
+    }
+
+    .hero-homepage .hero-homepage-challenge {
+        font-size: 64px;
+        line-height: 51px;
+    }
+
+    .hero-homepage .hero-homepage-line-3 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+
+    .hero-homepage .hero-homepage-badge {
+        display: none;
+    }
+}

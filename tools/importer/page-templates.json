@@ -1,0 +1,26 @@
+[
+  {
+    "name": "homepage",
+    "description": "RINVOQ HCP homepage with hero, indication categories, patient support, and ISI sections",
+    "urls": [
+      "https://www.rinvoqhcp.com/"
+    ],
+    "blocks": [
+      {
+        "name": "hero-homepage",
+        "selector": ".container_hero-home, .container_hero.container_hero-home",
+        "description": "Homepage hero with dark gradient background, decorative handwriting font for CHALLENGE, and brushstroke underline for TREATMENT GOALS"
+      },
+      {
+        "name": "columns-indication",
+        "selector": ".brush-card-container, .flexbox-v2.brush-card-container",
+        "description": "3-column indication category layout with brushstroke-decorated headings and icon-linked CTAs for Rheumatology, Dermatology, Gastroenterology"
+      },
+      {
+        "name": "cards-support",
+        "selector": ".multi-column-card.gold, .flexbox-v2.multi-column-card",
+        "description": "Patient support cards with gold/yellow border accent, icon images, and plum CTA buttons"
+      }
+    ]
+  }
+]
