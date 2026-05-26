@@ -277,8 +277,16 @@ main > .section:has(.cards-support) > .default-content-wrapper > p:last-child {
 
 /* ===== HOMEPAGE — ISI Section Gray Background ===== */
 
-/* ISI section uses light gray background (not black) */
-main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety,
-main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety ~ * {
+/* ISI section uses light gray background (not black) — body text only, not headings */
+main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety ~ p,
+main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety ~ ul,
+main > .section:not(.hero-homepage-container, .columns-indication-container, .cards-support-container) > .default-content-wrapper > h3#isi-safety ~ ol {
     color: var(--text-color);
+}
+
+/* ===== REFERENCE SECTION ===== */
+
+/* Reference section — plum text color (sections without headings, after ISI) */
+main > .section:not(:has(h3), .hero-container, .hero-homepage-container, .columns-indication-container, .cards-container, .cards-support-container, .form-container) > .default-content-wrapper {
+    color: var(--color-plum);
 }

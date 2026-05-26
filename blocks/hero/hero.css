@@ -82,6 +82,157 @@
     background-repeat: no-repeat;
 }
 
+/* Dermatology hero variant */
+.hero.hero-derm {
+    background-color: rgb(237 237 237);
+    min-height: 400px;
+    padding: 64px 20px 40px;
+    position: relative;
+}
+
+/* Background texture via ::before — responsive asset switch */
+.hero.hero-derm::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 -2000px;
+    background-image: url('/content/dam/rinvoqhcpivy/images/backgrounds/hero-gastro-large.png');
+    background-size: 3100px 692px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero.hero-derm h1 {
+    color: var(--heading-color);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero.hero-derm .hero-accent {
+    display: inline;
+    font-family: 'Upa Handwriting', var(--accent-font-family), serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: rgb(255 209 0);
+    line-height: 80px;
+}
+
+.hero.hero-derm .hero-line-3 {
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 36px;
+    color: var(--heading-color);
+    padding-bottom: 0;
+}
+
+.hero.hero-derm .hero-line-3::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: url('/content/dam/rinvoqhcpivy/images/brushstrokes/stroke--page-hero-tall.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* CTA card within hero-container section (image-text overlay) */
+.hero-container .default-content-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    border-radius: 16px;
+}
+
+.hero-container .default-content-wrapper > p:first-child {
+    margin: 0;
+    line-height: 0;
+}
+
+.hero-container .default-content-wrapper > p:first-child img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-container .default-content-wrapper h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-white);
+    background-image: none;
+    padding: 0;
+    margin: 0 0 4px;
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-80%);
+    z-index: 1;
+    line-height: 1.2;
+}
+
+.hero-container .default-content-wrapper h3 span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.hero-container .default-content-wrapper h3 strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.hero-container .default-content-wrapper .button-container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(60%);
+    z-index: 1;
+}
+
+.hero-container .default-content-wrapper a.button {
+    background-color: var(--color-plum);
+    color: var(--color-white);
+    border-radius: 100px;
+    padding: 16px 54px 16px 32px;
+    font-size: var(--body-font-size-m);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-container .default-content-wrapper a.button::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Ccircle cx='10' cy='10' r='9' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M8 6l4 4-4 4' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hero-container .default-content-wrapper a.button:hover {
+    background-color: rgb(115 14 60);
+}
+
 @media (width >= 900px) {
     .hero {
         padding: 40px 32px;
@@ -103,5 +254,37 @@
     .hero.hero-access {
         min-height: 240px;
         padding: 40px 16px 0;
+    }
+
+    .hero.hero-derm .hero-accent {
+        font-size: 64px;
+        line-height: 56px;
+    }
+
+    .hero.hero-derm .hero-line-3 {
+        font-size: 26px;
+        line-height: 28px;
+        padding-bottom: 0;
+    }
+
+    .hero.hero-derm .hero-line-3::after {
+        bottom: -12px;
+        height: 8px;
+    }
+
+    .hero.hero-derm h1 {
+        font-size: 26px;
+        line-height: 28px;
+    }
+
+    .hero.hero-derm {
+        min-height: 360px;
+        padding: 24px 20px 0;
+    }
+
+    .hero.hero-derm::before {
+        background-image: url('/content/dam/rinvoqhcpivy/images/backgrounds/background--hero-grey-sm.png');
+        background-size: 100%;
+        background-position: 0 0;
     }
 }
