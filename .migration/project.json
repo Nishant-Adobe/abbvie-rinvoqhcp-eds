@@ -5,7 +5,7 @@
   "aemAssetsFolderPath": "/content/dam/multirepo-rinvoqhcp",
   "aemSiteName": "multirepo-rinvoqhcp",
   "aemSiteTitle": "Rinvoqhcp",
+  "baseUrl": "https://www.rinvoqhcp.com",
   "previewOrg": "nishant-adobe",
-  "previewSite": "abbvie-rinvoqhcp-eds",
-  "baseUrl": "https://www.rinvoqhcp.com"
+  "previewSite": "abbvie-rinvoqhcp-eds"
 }
