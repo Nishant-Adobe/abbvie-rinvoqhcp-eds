@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-support",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-21T18:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoqhcp.com/patient-support",
+    "originPage": "RINVOQ HCP Patient Support page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-info",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + CTA | text + list",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product information sections with icon and CTA on one side",
+      "feature highlight with description list on opposite side",
+      "service promotion with benefits list"
+    ],
+    "notSuitableFor": [
+      "navigation link lists with multiple categories",
+      "equal-weight image comparison layouts",
+      "3+ column category displays"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/patient-support"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-21T18:24:00.000Z"
+  }
+}

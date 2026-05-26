@@ -4,12 +4,22 @@ export default function decorate(block) {
 
   const text = textDiv.textContent.trim();
 
-  if (text.includes('COMMITMENT') && text.includes('EXCEPTIONAL ACCESS')) {
+  if (text.includes('COMMITMENT') && text.includes('EXCEPTIONAL')) {
+    // Access + Patient Support hero pattern
+    const afterExceptional = text.split('EXCEPTIONAL')[1].trim();
     const h1 = document.createElement('h1');
-    h1.innerHTML = '<span class="hero-line-1">ABBVIE\'S</span>'
-      + '<span class="hero-commitment">COMMITMENT</span>'
-      + '<span class="hero-line-3">TO EXCEPTIONAL ACCESS</span>';
+    h1.innerHTML = '<span class="hero-line-1">ABBVIE\'S COMMITMENT TO</span>'
+      + '<span class="hero-commitment">EXCEPTIONAL</span>'
+      + `<span class="hero-line-3">${afterExceptional}</span>`;
     textDiv.replaceChildren(h1);
     block.classList.add('hero-access');
+  } else if (text.includes('DISRUPT') && text.includes('ITCH AND RASH')) {
+    // Dermatology landing hero pattern — 4 lines matching production
+    const h1 = document.createElement('h1');
+    h1.innerHTML = 'FOR UNCONTROLLED<br>AD PATIENTS<br>'
+      + '<span class="hero-accent">DISRUPT</span><br>'
+      + '<span class="hero-line-3">ITCH AND RASH</span>';
+    textDiv.replaceChildren(h1);
+    block.classList.add('hero-derm');
   }
 }
